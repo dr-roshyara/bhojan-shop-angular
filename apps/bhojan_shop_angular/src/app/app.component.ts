@@ -4,8 +4,8 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'my-app', // This is the selector for the custom element
+  imports: [NxWelcomeComponent, RouterModule], // Import necessary components
+  selector: 'app-root', // Ensure this matches the selector in index.html
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

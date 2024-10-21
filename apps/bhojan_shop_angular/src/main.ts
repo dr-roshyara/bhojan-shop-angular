@@ -1,14 +1,6 @@
-import { createApplication } from '@angular/platform-browser';
-import { createCustomElement } from '@angular/elements';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 
-createApplication({ providers: appConfig.providers })
-  .then(appRef => {
-    const injector = appRef.injector;
-
-    // Register the custom element with the selector <my-app>
-    const appElement = createCustomElement(AppComponent, { injector });
-    customElements.define('my-app', appElement);
-  })
-  .catch(err => console.error(err));
+// Bootstrap the main application with the AppComponent and appConfig
+bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err));
