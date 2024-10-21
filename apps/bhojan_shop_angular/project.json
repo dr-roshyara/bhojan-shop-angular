@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/bhojan_shop_angular",
         "index": "apps/bhojan_shop_angular/src/index.html",
         "browser": "apps/bhojan_shop_angular/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": ["zone.js", "apps/bhojan_shop_angular/src/polyfills.ts"], 
         "tsConfig": "apps/bhojan_shop_angular/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -64,7 +64,7 @@
           "buildTarget": "bhojan_shop_angular:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development" 
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -79,7 +79,9 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/bhojan_shop_angular/jest.config.ts"
+        "jestConfig": "apps/bhojan_shop_angular/jest.config.ts",
+        "polyfills": ["apps/bhojan_shop_angular/src/polyfills.ts"]
+
       }
     },
     "serve-static": {
